@@ -3,6 +3,8 @@
 @import "redefine/sourcemode.dark.css";
 
 :root {
+  --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+
   --side-bar-bg-color: #202124;
   --control-text-color: #777;
 
@@ -165,16 +167,31 @@
       url("./redefine/noto-sans-sc-v26-latin-700.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* Use a special font for code blocks just like GitHub */
+@font-face {
+    font-family: 'SFMono-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Regular'), url('./github-night/SFMonoSemibold.woff') format('woff');
+}
+
 html {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+/*body {
   font-family: "Open Sans", "Noto Sans SC", "Clear Sans", "Helvetica Neue",
     Helvetica, Arial, "Segoe UI Emoji", sans-serif;
   color: var(--default-text-color);
   line-height: 1.6;
+}*/
+
+body {
+font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons",
+    "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: var(--default-text-color);
+line-height: 1.6;
 }
 
 html,
@@ -230,7 +247,9 @@ h6 {
   font-weight: bold;
   line-height: 1.5;
   cursor: text;
-  font-family: "Open Sans", "Noto Sans SC", sans-serif;
+/*font-family: "Open Sans", "Noto Sans SC", sans-serif;*/
+font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons",
+  "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--first-text-color);
 }
 h1:hover a.anchor,
@@ -266,56 +285,67 @@ h6 code {
   font-size: inherit;
 }
 h1 {
-  font-size: 3.2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  border-bottom: 2px solid var(--shadow-color-1);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid #eee;
 }
 
 h2 {
-  font-size: 2.5rem;
-  line-height: 1.225;
-  border-bottom: 2px solid var(--shadow-color-1);
-  margin-top: 4rem;
+  font-size: 2.0rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /*@media print {
-	.typora-export h1,
-	.typora-export h2 {
-		border-bottom: none;
-		padding-bottom: initial;
-	}
-  
-	.typora-export h1::after,
-	.typora-export h2::after {
-		content: "";
-		display: block;
-		height: 100px;
-		margin-top: -96px;
-		border-top: 1px solid var(--shadow-color-1);
-	}
-  }*/
+.typora-export h1,
+.typora-export h2 {
+  border-bottom: none;
+  padding-bottom: initial;
+}
+
+.typora-export h1::after,
+.typora-export h2::after {
+  content: "";
+  display: block;
+  height: 100px;
+  margin-top: -96px;
+  border-top: 1px solid #eee;
+}
+}*/
 
 h3 {
-  font-size: 1.8rem;
-  font-weight: 550;
-  margin-top: 2.8rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 h4 {
   font-size: 1.5rem;
-  font-weight: 550;
-  margin-top: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 h5 {
   font-size: 1.28rem;
-  font-weight: 550;
-  margin-top: 2.2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 h6 {
   font-size: 1em;
-  font-weight: 550;
-  line-height: 1.2;
-  margin-top: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 img {
@@ -369,9 +399,12 @@ ol:last-child {
   margin-bottom: 0;
 }
 blockquote {
-  border-left: 4px solid var(--default-text-color);
+  border-left: 4px solid #696969;
   padding: 0 15px;
-  color: #b1b1b1;
+/*  color: #b1b1b1;*/
+  border-radius: 0.3rem;
+  background-color: var(--third-background-color);
+  padding: 0.7rem;
 }
 blockquote blockquote {
   padding-right: 0;
@@ -441,15 +474,15 @@ tbody tr:last-child {
 }
 
 .CodeMirror-lines {
-  padding: 10px 5px 0px 15px;
+  padding: 00px 5px 0px 15px;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
-  border-top: 1px solid var(--shadow-color-1);
+/*  border-top: 1px solid var(--shadow-color-1);*/
 }
 
 .CodeMirror-gutters {
   border-right: 0 !important;
-  border-top: 1px solid var(--shadow-color-1);
+/*  border-top: 1px solid var(--shadow-color-1);*/
 }
 
 .code-tooltip {
@@ -465,8 +498,9 @@ tt {
   background-color: var(--third-background-color);
   border-radius: 3px;
   padding: 0;
-  padding: 5px 10px 10px 0px;
+  padding: 15px 10px 15px 0px;
   font-size: 0.9em;
+  font-family: "SFMono-Regular", "Menlo Regular", Nunito, monospace;
 }
 
 code {
@@ -492,17 +526,17 @@ code {
   background: var(--third-background-color);
   border-radius: var(--redefine-border-radius-large);
   border: 1px solid var(--shadow-color-1);
-  padding-top: 40px;
-  margin-top: 10px;
+/*  padding-top: 40px;
+  margin-top: 10px;*/
   margin-bottom: 1.2rem;
   position: relative;
-  margin-bottom: 1.2rem 0;
-  padding-bottom: 15px;
+/*  margin-bottom: 1.2rem 0;
+  padding-bottom: 15px;*/
   padding-right: 0px;
   padding-left: 0px;
 }
 
-.md-fences::after {
+/*.md-fences::after {
   content: " ";
   position: absolute;
   border-radius: var(--redefine-border-radius-full);
@@ -515,7 +549,7 @@ code {
   -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
   box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
   z-index: 3;
-}
+}*/
 
 #write pre.md-meta-block {
   padding: 1rem;
@@ -581,8 +615,7 @@ code {
 
 #typora-quick-open-item {
   background-color: var(--second-background-color);
-  border-color: var(--second-background-color) var(--second-background-color)
-    var(--second-background-color) var(--shadow-color-1);
+  border-color: var(--second-background-color) var(--second-background-color) var(--second-background-color) var(--shadow-color-1);
   border-style: solid;
   border-width: 1px;
 }
@@ -653,52 +686,51 @@ footer {
 }
 
 .file-list-item {
-  border-bottom: none;
+    border-bottom:none;
 }
 
 .file-list-item-summary {
-  opacity: 1;
+    opacity: 1;
 }
 
 .file-list-item.active:first-child {
-  border-top: none;
+    border-top: none;
 }
 
 .file-node-background {
-  height: 32px;
+    height: 32px;
 }
 
-.file-library-node.active > .file-node-content,
+.file-library-node.active>.file-node-content,
 .file-list-item.active {
-  color: white;
-  color: var(--first-text-color);
+    color: white;
+    color: var(--first-text-color);
 }
 
-.file-library-node.active > .file-node-background {
-  background-color: var(--third-background-color);
+.file-library-node.active>.file-node-background{
+    background-color: var(--third-background-color);
 }
 .file-list-item.active {
-  background-color: var(--third-background-color);
+    background-color: var(--third-background-color);
 }
 
 .file-node-content {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .md-rawblock-control:not(.md-rawblock-tooltip) {
-  background-color: var(--second-background-color);
+	background-color: var(--second-background-color);
 }
 
-.md-rawblock-on-edit > .md-rawblock-tooltip,
-.md-rawblock:hover > .md-rawblock-container,
-.md-rawblock:hover > .md-rawblock-tooltip {
-  background-color: var(--second-background-color);
+.md-rawblock-on-edit>.md-rawblock-tooltip, .md-rawblock:hover>.md-rawblock-container, .md-rawblock:hover>.md-rawblock-tooltip {
+	background-color: var(--second-background-color);
 }
 
 .sidebar-footer {
-  border-top: 1px solid var(--shadow-color-1);
+	border-top: 1px solid var(--shadow-color-1);
 }
 
 .file-node-content:hover {
-  color: var(--second-text-color);
+	color: var(--second-text-color);
+
 }

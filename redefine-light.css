@@ -1,5 +1,5 @@
 :root {
-	--side-bar-bg-color: #fafafa;
+	--side-bar-bg-color: #f5f7f9;
 	--control-text-color: #777;
 	--shadow-color-1: rgba(0, 0, 0, 0.08);
 	--shadow-color-2: rgba(0, 0, 0, 0.05);
@@ -15,8 +15,8 @@
 	  var(--shadow-color-1) 0px 0px 0px 1px inset;
 	--background-color: #fff;
 	--background-color-transparent: rgba(255, 255, 255, 0.6);
-	--second-background-color: #fafafa;
-	--third-background-color: #f7f7f7;
+	--second-background-color: #FCFDFE;
+	--third-background-color: #f5f7f9;
 	--primary-color: #005080;
 	--first-text-color: #323739;
 	--second-text-color: #343a3c;
@@ -24,7 +24,7 @@
 	--fourth-text-color: #eaeced;
 	--default-text-color: #373d3f;
 	--invert-text-color: #bebec6;
-	--border-color: #b3b3b3;
+	--border-color: #e6ecf1;
 	--selection-color: #0068a6;
 	--shadow-hover-color: rgba(0, 0, 0, 0.28);
 	--first-screen-text-color: #fff;
@@ -154,6 +154,16 @@ color: var(--default-text-color);
 line-height: 1.6;
 }
 
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background: #202124;
+  background: var(--background-color);
+  fill: currentColor;
+  line-height: 1.625rem;
+}
+
 #write {
 max-width: 860px;
 margin: 0 auto;
@@ -241,7 +251,7 @@ h1 {
 	margin-top: 3rem;
 	margin-bottom: 0.5rem;
 	padding-bottom: 0.2rem;
-	border-bottom: 2px solid #eee;
+	border-bottom: 2px solid var(--border-color);
 }
 
 h2 {
@@ -349,7 +359,7 @@ ol:last-child {
 margin-bottom: 0;
 }
 blockquote {
-border-left: 4px solid #dfe2e5;
+border-left: 4px solid var(--border-color);
 padding: 0 15px;
 /*color: #777777;*/
 border-radius: 0.3rem;
@@ -392,21 +402,21 @@ font-weight: bold;
 border-bottom: 0;
 margin: 0;
 padding: 8px 16px;
-border-left: 1px solid var(--shadow-color-1);
+border-left: 1px solid var(--border-color);
 }
 
 table th:last-child {
-border-right: 1px solid var(--shadow-color-1);
+border-right: 1px solid var(--border-color);
 }
 
 table td {
 margin: 0;
 padding: 8px 16px;
-border-left: 1px solid var(--shadow-color-1);
+border-left: 1px solid var(--border-color);
 }
 
 table td:last-child {
-border-right: 1px solid var(--shadow-color-1);
+border-right: 1px solid var(--border-color);
 }
 
 table th:first-child,
@@ -420,7 +430,7 @@ margin-bottom: 0;
 }
 
 tbody tr:last-child {
-border-bottom: 1px solid var(--shadow-color-1);
+border-bottom: 1px solid var(--border-color);
 }
 
 .CodeMirror-lines {
@@ -444,7 +454,7 @@ border-radius: var(--redefine-border-radius-small);
 .md-fences,
 code,
 tt {
-border: 1px solid #e7eaed;
+border: 1px solid var(--border-color);
 background-color: var(--third-background-color);
 border-radius: 3px;
 padding: 0;
@@ -476,7 +486,7 @@ pre {
 .md-fences {
 background: var(--third-background-color);
 border-radius: var(--redefine-border-radius-large);
-border: 1px solid var(--shadow-color-1);
+border: 1px solid var(--border-color);
 /*padding-top: 40px;*/
 /*margin-top: 10px;*/
 margin-bottom: 1.2rem;
@@ -558,6 +568,10 @@ padding-bottom: 20px;
 
 .sidebar-tabs {
 border-bottom: none;
+}
+
+#typora-sidebar {
+    border-right: 1px solid var(--border-color);
 }
 
 #typora-quick-open {
